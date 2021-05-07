@@ -35,7 +35,6 @@ body{
     background-image: url('../img/mine.jpg');
     height: calc(100% - 140px);
     border-right: 15px solid #fff;
-    border-top: 1px solid #dfdfdf;
 }
 .container .icon i{
     font-size: 20px;
