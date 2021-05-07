@@ -29,10 +29,13 @@ body{
 }
 .container .right{
     width: 65%;
-    background-color: darkslateblue;
+    background-color: #fff;
 }
 .container .right section{
     background-image: url('../img/mine.jpg');
+    height: calc(100% - 140px);
+    border-right: 15px solid #fff;
+    border-top: 1px solid #dfdfdf;
 }
 .container .icon i{
     font-size: 20px;
@@ -61,9 +64,4 @@ body{
     padding: 15px;
     border: 0;
     border-radius: 10px;
-}
-
-.container section{
-    height: calc(100% - 140px);
-    border-right: 15px solid #fff;
 }
