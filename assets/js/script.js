@@ -2,6 +2,10 @@ const app = new Vue({
 
     el: '#app',
     data: {
+        user:{
+            name:'Stefano',
+            avatar:'_io'
+        },
         contacts: [
             {
                 name: 'Michele',
@@ -90,7 +94,9 @@ const app = new Vue({
        
     },
     methods:{
-      
+      getImage(image){
+         return './assets/img/avatar' + image + '.jpg';
+      }
     }
 
 })

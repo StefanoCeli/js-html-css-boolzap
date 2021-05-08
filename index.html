@@ -17,7 +17,10 @@
 
         <aside class="left">
             <header class="top">
-                <div class="user"></div>
+                <div class="user">
+                    <img :src="getImage(user.avatar)" alt="">
+                    <h4> {{ user.name }} </h4>
+                </div>
                 <div class="icon">
                     <i class="fas fa-circle-notch"></i>
                     <i class="fas fa-comment-alt"></i>

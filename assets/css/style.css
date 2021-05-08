@@ -36,6 +36,15 @@ body{
     height: calc(100% - 140px);
     border-right: 15px solid #fff;
 }
+.container .user{
+    display: flex;
+    align-items: center;
+}
+.container .user img{
+    width: 50px;
+    border-radius: 50%;
+    margin: 0 15px;
+}
 .container .icon i{
     font-size: 20px;
     color: rgb(180, 180, 180);
