@@ -14,9 +14,10 @@
 <body>
 
     <div id="app" class="container">
+
        <!--  LEFT SIDE -->
         <aside class="left">
-            
+            <!-- HEADER -->
             <header>
                 <div class="user">
                     <img :src="getImage(currentUser.avatar)" alt="">
@@ -29,7 +30,9 @@
                     <i class="fas fa-ellipsis-v"></i>
                 </div>
             </header>
+            <!-- /HEADER -->
 
+            <!-- NOTIFICHE -->
             <div class="notification">
                 <i class="fas fa-bell-slash"></i>
                <div>
@@ -37,7 +40,9 @@
                 <span>Attiva notifiche desktop</span>
                </div>
             </div>
+            <!-- /NOTIFICHE -->
 
+           <!--  CONTATTI -->
             <div class="serch-bar">
                 <i class="fas fa-search"></i>
                 <input type="text" placeholder="Cerca o inizia una nuova chat">
@@ -53,17 +58,16 @@
                         <img :src="getImage(contact.avatar)" alt="">
                         <h4> {{ contact.name }} </h4>
                     </li>
-                  
                 </ul>
             </div>
-
+            <!--  /CONTATTI -->
 
         </aside>
         <!--  /LEFT SIDE -->
 
         <!--  RIGHT SIDE -->
         <main class="right">
-
+           <!--  HEADER -->
             <header>
 
                 <div 
@@ -87,7 +91,9 @@
                 </div>
 
             </header>
+            <!--  /HEADER -->
 
+            <!--  SECTION -->
             <section>
                 <div  
                 v-for="(contact,index) in contacts"
@@ -108,17 +114,19 @@
 
                 </div>
             </section>
+            <!--  /SECTION -->
 
+            <!-- FOOTER -->
             <footer>
                 <i class="far fa-smile"></i>
                 <input type="text" placeholder="Scrivi un messaggio">
                 <i class="fas fa-microphone"></i>
             </footer>
+            <!-- /FOOTER -->
             
         </main>
         <!--  /RIGHT SIDE -->
        
-
     </div>
    
 
