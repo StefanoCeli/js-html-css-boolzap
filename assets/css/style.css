@@ -76,11 +76,18 @@ i{
     padding-right: 20px;
     overflow: auto;
 }
+.container .left .contacts-list ul{
+    height: 100%;
+    background-color: #fff;
+}
 .container .left .contacts-list li{
-
     display: inline-block;
     width: 580px;
     background-color: #fff;
+    border-bottom: 1px solid #B1B1B1;
+}
+.container .left .contacts-list li:last-child{
+    border: 0;
 }
 .container .right{
     width: 65%;
