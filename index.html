@@ -45,20 +45,14 @@
 
             <div class="contacts-list">
                 <ul>
-                    <li>lorem2000</li>
-                    <li>lorem2000</li>
-                    <li>lorem2000</li>
-                    <li>lorem2000</li>
-                    <li>lorem2000</li>
-                    <li>lorem2000</li>
-                    <li>lorem2000</li>
-                    <li>lorem2000</li>
-                    <li>lorem2000</li>
-                    <li>lorem2000</li>
-                    <li>lorem2000</li>
-                    <li>lorem2000</li>
-                    <li>lorem2000</li>
-                    <li>lorem2000</li>
+                    <li 
+                    v-for="contact in contacts"
+                    class="user"
+                    >
+                        <img :src="getImage(contact.avatar)" alt="">
+                        <h4> {{ contact.name }} </h4>
+                    </li>
+                  
                 </ul>
             </div>
 
