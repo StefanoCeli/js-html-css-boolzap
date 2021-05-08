@@ -13,11 +13,11 @@
 </head>
 <body>
 
-    <div id="app" class="container  clearfix">
-
+    <div id="app" class="container">
+       <!--  LEFT SIDE -->
         <aside class="left">
             
-            <header class="top">
+            <header>
                 <div class="user">
                     <img :src="getImage(currentUser.avatar)" alt="">
                     <h4> {{ currentUser.name }} </h4>
@@ -46,8 +46,9 @@
             <div class="contacts-list">
                 <ul>
                     <li 
-                    v-for="contact in contacts"
+                    v-for="(contact,index) in contacts"
                     class="user"
+                    @click=" selectUser = index"
                     >
                         <img :src="getImage(contact.avatar)" alt="">
                         <h4> {{ contact.name }} </h4>
@@ -58,19 +59,55 @@
 
 
         </aside>
+        <!--  /LEFT SIDE -->
 
+        <!--  RIGHT SIDE -->
         <main class="right">
 
             <header>
-                <div class="user"></div>
+
+                <div 
+                class="user"
+                v-for="(contact,index) in contacts"
+                v-if=" selectUser === index "
+                >
+                    <div>
+                        <img :src="getImage(contact.avatar)" alt="">
+                    </div>
+                    <div>
+                        <h4> {{ contact.name }} </h4>
+                        <h5>Ultimo accesso oggi alle</h5>
+                    </div>
+                </div>
+
                 <div class="icon">
                     <i class="fas fa-search"></i>
                     <i class="fas fa-paperclip"></i>
                     <i class="fas fa-ellipsis-v"></i>
                 </div>
+
             </header>
 
-            <section></section>
+            <section>
+                <div  
+                v-for="(contact,index) in contacts"
+                v-if=" selectUser === index">
+
+                <div
+                 v-for="message in contact.messages"
+                 :class="message.status"
+                 >
+                    <span class="text"
+                    >{{ message.text }}
+                        <span class="date-text">
+                            {{ message.date }}
+                        </span>
+                        <i class="fas fa-chevron-down"></i>
+                    </span>
+                </div>
+
+                </div>
+            </section>
 
             <footer>
                 <i class="far fa-smile"></i>
@@ -79,7 +116,7 @@
             </footer>
             
         </main>
-        
+        <!--  /RIGHT SIDE -->
        
 
     </div>

@@ -27,9 +27,7 @@ i{
 }
 .container .left{
     width: 35%;
-}
-.container .left .top{
-    border-right: 1px solid #B1B1B1;
+    border-right: 1px solid #bbbbbb;
 }
 .container .left .notification{
     height: 70px;
@@ -57,7 +55,7 @@ i{
     background-color: #fff;
     display: flex;
     align-items: center;
-    box-shadow: 0 0 2px 1px rgba(219, 219, 219, 0.3);
+    box-shadow: 0 0 2px 1px rgba(219, 219, 219, 0.5);
 }
 .container .left .serch-bar i{
     color: #B1B1B1;
@@ -80,6 +78,7 @@ i{
 .container .left .contacts-list ul{
     height: 100%;
     background-color: #fff;
+    box-shadow: 0 0 2px 1px rgba(219, 219, 219, 0.5);
 }
 .container .left .contacts-list li{
     width: 100%;
@@ -98,10 +97,55 @@ i{
     width: 65%;
     background-color: #fff;
 }
+.container .right .user h5{
+ color: #888E91;
+}
 .container .right section{
     background-image: url('../img/mine.jpg');
     height: calc(100% - 140px);
+    padding: 50px;
     border-right: 15px solid #fff;
+}
+.container .right section .text{
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px 50px 20px 15px;
+    position: relative;
+}
+.container .right section .text:hover i{
+    display: block;
+}
+.container .right section .text .date-text{
+    font-size: 8px;
+    color: #C1C4C5;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+.container .right section .text i{
+    font-size: 15px;
+    color: #C1C4C5;
+    position: absolute;
+    right: 10px;
+    top: 42%;
+    transform: translateY(-50%);
+    display: none;
+}
+.sent{
+    display: flex;
+    justify-content: end;
+}
+.sent .text{
+    background-color: #D5F9BA;
+}
+.received{
+    display: flex;
+    justify-content: start;
+}
+.received .text{
+    background-color: #fff;
 }
 .container .user{
     display: flex;

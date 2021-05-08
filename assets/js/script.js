@@ -6,6 +6,7 @@ const app = new Vue({
             name:'Stefano',
             avatar:'_io'
         },
+        selectUser: 0,
         contacts: [
             {
                 name: 'Michele',
