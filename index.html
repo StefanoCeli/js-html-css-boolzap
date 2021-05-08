@@ -13,14 +13,14 @@
 </head>
 <body>
 
-    <div id="app" class="container">
+    <div id="app" class="container  clearfix">
 
         <aside class="left">
-
+            
             <header class="top">
                 <div class="user">
-                    <img :src="getImage(user.avatar)" alt="">
-                    <h4> {{ user.name }} </h4>
+                    <img :src="getImage(currentUser.avatar)" alt="">
+                    <h4> {{ currentUser.name }} </h4>
                 </div>
 
                 <div class="icon">
@@ -31,8 +31,37 @@
             </header>
 
             <div class="notification">
-                
+                <i class="fas fa-bell-slash"></i>
+               <div>
+                <h5>Ricevi notifiche di nuovi messaggi</h5>
+                <span>Attiva notifiche desktop</span>
+               </div>
             </div>
+
+            <div class="serch-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Cerca o inizia una nuova chat">
+            </div>
+
+            <div class="contacts-list">
+                <ul>
+                    <li>lorem2000</li>
+                    <li>lorem2000</li>
+                    <li>lorem2000</li>
+                    <li>lorem2000</li>
+                    <li>lorem2000</li>
+                    <li>lorem2000</li>
+                    <li>lorem2000</li>
+                    <li>lorem2000</li>
+                    <li>lorem2000</li>
+                    <li>lorem2000</li>
+                    <li>lorem2000</li>
+                    <li>lorem2000</li>
+                    <li>lorem2000</li>
+                    <li>lorem2000</li>
+                </ul>
+            </div>
+
 
         </aside>
 

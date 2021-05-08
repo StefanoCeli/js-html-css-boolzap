@@ -2,7 +2,7 @@ const app = new Vue({
 
     el: '#app',
     data: {
-        user:{
+        currentUser:{
             name:'Stefano',
             avatar:'_io'
         },
