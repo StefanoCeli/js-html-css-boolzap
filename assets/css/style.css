@@ -27,6 +27,10 @@ body{
 .container .left .top{
     border-right: 1px solid rgb(180, 180, 180);
 }
+.container .left .notification{
+    height: 70px;
+    background-color: cyan;
+}
 .container .right{
     width: 65%;
     background-color: #fff;
