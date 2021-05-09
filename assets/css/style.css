@@ -130,6 +130,7 @@ i{
     height: calc(100% - 140px);
     padding: 50px;
     border-right: 15px solid #fff;
+    overflow: auto;
 }
 .container .right section .text{
     display: inline-block;
@@ -138,6 +139,7 @@ i{
     margin-bottom: 10px;
     padding: 10px 50px 20px 15px;
     position: relative;
+    max-width: 400px;
 }
 .container .right section .text:hover i{
     display: block;

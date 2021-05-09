@@ -99,18 +99,18 @@
                 v-for="(contact,index) in contacts"
                 v-if=" selectUser === index">
 
-                <div
-                 v-for="message in contact.messages"
-                 :class="message.status"
-                 >
-                    <span class="text"
-                    >{{ message.text }}
-                        <span class="date-text">
-                            {{ message.date }}
+                    <div
+                    v-for="message in contact.messages"
+                    :class="message.status"
+                    >
+                        <span class="text"
+                        >{{ message.text }}
+                            <span class="date-text">
+                                {{ message.date }}
+                            </span>
+                            <i class="fas fa-chevron-down"></i>
                         </span>
-                        <i class="fas fa-chevron-down"></i>
-                    </span>
-                </div>
+                    </div>
 
                 </div>
             </section>
