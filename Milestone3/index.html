@@ -18,8 +18,8 @@
        <!--  LEFT SIDE -->
         <aside class="left">
             <!-- HEADER -->
-            <header>
-                <div class="user">
+            <header class="flex-center">
+                <div class="flex-center user">
                     <img :src="getImage(currentUser.avatar)" :alt="currentUser.name">
                     <h4> {{ currentUser.name }} </h4>
                 </div>
@@ -33,7 +33,7 @@
             <!-- /HEADER -->
 
             <!-- NOTIFICHE -->
-            <div class="notification">
+            <div class="flex-center notification">
                 <i class="fas fa-bell-slash"></i>
                <div>
                 <h5>Ricevi notifiche di nuovi messaggi</h5>
@@ -43,7 +43,7 @@
             <!-- /NOTIFICHE -->
 
            <!--  CONTATTI -->
-            <div class="serch-bar">
+            <div class="flex-center serch-bar">
                 <i class="fas fa-search"></i>
                 <input type="text" placeholder="Cerca o inizia una nuova chat">
             </div>
@@ -52,11 +52,16 @@
                 <ul>
                     <li 
                     v-for="(contact,index) in contacts"
-                    class="user"
                     @click=" selectUser = index"
                     >
-                        <img :src="getImage(contact.avatar)" :alt="contact.name">
-                        <h4> {{ contact.name }} </h4>
+                        <div class="user">
+                            <img :src="getImage(contact.avatar)" :alt="contact.name">
+                            <div>
+                                <h4> {{ contact.name }} </h4>
+                                <span class="preview">{{ contact.messages[contact.messages.length - 1].text }}</span>
+                            </div>
+                        </div>
+                        <span class="date-text">{{ contact.messages[contact.messages.length - 1].date }}</span>
                     </li>
                 </ul>
             </div>
@@ -68,10 +73,10 @@
         <!--  RIGHT SIDE -->
         <main class="right">
            <!--  HEADER -->
-            <header>
+            <header class="flex-center">
 
                 <div 
-                class="user"
+                class=" flex-center user"
                 v-for="(contact,index) in contacts"
                 v-if=" selectUser === index "
                 >
@@ -80,7 +85,14 @@
                     </div>
                     <div>
                         <h4> {{ contact.name }} </h4>
-                        <h5>Ultimo accesso oggi alle</h5>
+                        <h5>Ultimo accesso il
+                            
+                            <span 
+                            v-for="(message, index) in contact.messages"
+                            v-if="index === contact.messages.length -1"
+                            >{{ message.date }}</span>
+                        
+                        </h5>
                     </div>
                 </div>
 
@@ -117,9 +129,13 @@
             <!--  /SECTION -->
 
             <!-- FOOTER -->
-            <footer>
+            <footer class="flex-center">
                 <i class="far fa-smile"></i>
-                <input type="text" placeholder="Scrivi un messaggio">
+                <input 
+                type="text" placeholder="Scrivi un messaggio"
+                v-model="messaggioScritto"
+                @keyup.enter="pushMessage(messaggioScritto)"
+                >
                 <i class="fas fa-microphone"></i>
             </footer>
             <!-- /FOOTER -->
@@ -130,8 +146,10 @@
     </div>
    
 
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/locale/it.js"></script>
     <script src="assets/js/script.js"></script>
+   
     
 </body>
 </html>

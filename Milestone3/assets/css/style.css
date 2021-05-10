@@ -23,7 +23,7 @@ i{
     min-width: 900px;
     background-color: #FAFAFA;
 }
-.container .user{
+.container .flex-center{
     display: flex;
     align-items: center;
 }
@@ -38,9 +38,7 @@ i{
 }
 .container header, .container footer{
     height: 70px;
-    display: flex;
     justify-content: space-between;
-    align-items: center;
     background-color: #EAEAEA;
 }
 .container .left, .container .right{
@@ -55,8 +53,6 @@ i{
 .container .left .notification{
     height: 70px;
     background-color: #8EDAFC;
-    display: flex;
-    align-items: center;
 }
 .container .left .notification i{
     color: #8EDAFC;
@@ -77,8 +73,6 @@ i{
     margin: 10px;
     width: calc(100% - 20px);
     background-color: #fff;
-    display: flex;
-    align-items: center;
     box-shadow: 0 0 2px 1px rgba(219, 219, 219, 0.5);
 }
 .container .left .serch-bar i{
@@ -106,7 +100,8 @@ i{
 .container .left .contacts-list li{
     width: 100%;
     padding: 10px;
-    align-items:initial;
+    display: flex;
+    justify-content: space-between;
     border-bottom: 1px solid #B1B1B1;
 }
 .container .left .contacts-list li:hover{ 
@@ -115,6 +110,24 @@ i{
 }
 .container .left .contacts-list li:last-child{
     border: 0;
+}
+.container .left .contacts-list li .user{
+    display: flex;
+    align-items: initial;
+}
+.container .left .contacts-list li .preview{
+    font-size: 13px;
+    color: #888E91;
+    display: inline-block;
+    width: 150px;
+    margin-top: 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.container .left .contacts-list li .date-text{
+    color: #888E91;
+    font-size: 13px;
 }
 /* CONTAINER RIGHT */
 .container .right{
@@ -144,7 +157,7 @@ i{
     display: block;
 }
 .container .right section .text .date-text{
-    font-size: 8px;
+    font-size: 9px;
     color: #C1C4C5;
     position: absolute;
     bottom: 5px;

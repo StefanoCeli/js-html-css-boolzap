@@ -7,6 +7,8 @@ const app = new Vue({
             avatar:'_io'
         },
         selectUser: 0,
+        messaggioScritto:"",
+        now: dayjs().format('DD/MM/YYYY HH:mm:ss'),
         contacts: [
             {
                 name: 'Michele',
@@ -94,9 +96,38 @@ const app = new Vue({
         ]
        
     },
+    mounted(){
+
+        setInterval(()=>{
+            this.now= dayjs().format('DD/MM/YYYY HH:mm:ss')
+        },1000);
+    },
     methods:{
+
       getImage(image){
          return './assets/img/avatar' + image + '.jpg';
+      },
+
+      pushMessage(messaggio){
+        if(this.messaggioScritto.length > 0){
+            this.contacts[this.selectUser].messages.push(
+                {
+                    date: this.now,
+                    text: messaggio,
+                    status: 'sent'
+                }
+            );
+            setTimeout(()=>{
+                this.contacts[this.selectUser].messages.push(
+                    {
+                        date: this.now,
+                        text: 'ok',
+                        status: 'received'
+                    }  
+                )
+            },1000)
+            this.messaggioScritto=""
+        }
       }
     }
 
