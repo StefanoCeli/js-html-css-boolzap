@@ -9,6 +9,7 @@ const app = new Vue({
         selectUser: 0,
         messaggioScritto:"",
         now: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+        risposte:['ok','va bene','non preoccuparti','fa niente','se lallero'],
         contacts: [
             {
                 name: 'Michele',
@@ -100,7 +101,7 @@ const app = new Vue({
 
         setInterval(()=>{
             this.now= dayjs().format('DD/MM/YYYY HH:mm:ss')
-        },1000);
+        },1000);     
     },
     methods:{
 
@@ -121,13 +122,16 @@ const app = new Vue({
                 this.contacts[this.selectUser].messages.push(
                     {
                         date: this.now,
-                        text: 'ok',
+                        text: this.risposte[ this.getRandomNum(0,this.risposte.length)],
                         status: 'received'
                     }  
                 )
             },1000)
             this.messaggioScritto=""
         }
+      },
+      getRandomNum(min,max){
+        return Math.floor(Math.random() * (max - min) + min);
       }
     }
 
