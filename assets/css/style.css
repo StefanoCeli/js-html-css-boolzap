@@ -95,8 +95,7 @@ i{
 .container .left .contacts-list{
     width: 100%;
     height: calc(100% - 195px);
-    padding-right: 20px;
-    overflow:auto;
+    overflow-y:scroll;
 }
 
 .container .left .contacts-list ul{
@@ -129,8 +128,7 @@ i{
     background-image: url('../img/mine.jpg');
     height: calc(100% - 140px);
     padding: 50px;
-    border-right: 15px solid #fff;
-    overflow: auto;
+    overflow-y: scroll;
 }
 .container .right section .text{
     display: inline-block;
@@ -139,7 +137,8 @@ i{
     margin-bottom: 10px;
     padding: 10px 50px 20px 15px;
     position: relative;
-    max-width: 400px;
+    min-width: 20%;
+    max-width: 50%;
 }
 .container .right section .text:hover i{
     display: block;
