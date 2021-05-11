@@ -57,7 +57,7 @@
                     <li 
                     v-for="(contact,index) in contacts"
                     @click=" selectUser = index"
-                    v-if="contact.name.includes(contatto)"
+                    v-if="contact.name.toLowerCase().includes(contatto)"
                     >
                         <div class="user">
                             <img :src="getImage(contact.avatar)" :alt="contact.name">
