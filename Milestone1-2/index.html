@@ -70,16 +70,12 @@
            <!--  HEADER -->
             <header>
 
-                <div 
-                class="user"
-                v-for="(contact,index) in contacts"
-                v-if=" selectUser === index "
-                >
+                <div class="user">
                     <div>
-                        <img :src="getImage(contact.avatar)" :alt="contact.name">
+                        <img :src="getImage(contacts[selectUser].avatar)" :alt="contacts[selectUser].name">
                     </div>
                     <div>
-                        <h4> {{ contact.name }} </h4>
+                        <h4> {{ contacts[selectUser].name }} </h4>
                         <h5>Ultimo accesso oggi alle</h5>
                     </div>
                 </div>

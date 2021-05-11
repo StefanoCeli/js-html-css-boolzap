@@ -75,21 +75,17 @@
            <!--  HEADER -->
             <header class="flex-center">
 
-                <div 
-                class=" flex-center user"
-                v-for="(contact,index) in contacts"
-                v-if=" selectUser === index "
-                >
+                <div class=" flex-center user">
                     <div>
-                        <img :src="getImage(contact.avatar)" :alt="contact.name">
+                        <img :src="getImage(contacts[selectUser].avatar)" :alt="contacts[selectUser].name">
                     </div>
                     <div>
-                        <h4> {{ contact.name }} </h4>
+                        <h4> {{ contacts[selectUser].name }} </h4>
                         <h5>Ultimo accesso il
                             
                             <span 
-                            v-for="(message, index) in contact.messages"
-                            v-if="index === contact.messages.length -1"
+                            v-for="(message, index) in contacts[selectUser].messages"
+                            v-if="index === contacts[selectUser].messages.length -1"
                             >{{ message.date }}</span>
                         
                         </h5>
@@ -143,7 +139,6 @@
    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/locale/it.js"></script>
     <script src="assets/js/script.js"></script>
    
     
