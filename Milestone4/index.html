@@ -45,7 +45,11 @@
            <!--  CONTATTI -->
             <div class="flex-center serch-bar">
                 <i class="fas fa-search"></i>
-                <input type="text" placeholder="Cerca o inizia una nuova chat">
+                <input 
+                type="text" 
+                placeholder="Cerca o inizia una nuova chat"
+                v-model="contatto"
+                >
             </div>
 
             <div class="contacts-list">
@@ -53,6 +57,7 @@
                     <li 
                     v-for="(contact,index) in contacts"
                     @click=" selectUser = index"
+                    v-if="contact.name.includes(contatto)"
                     >
                         <div class="user">
                             <img :src="getImage(contact.avatar)" :alt="contact.name">

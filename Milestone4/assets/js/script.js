@@ -8,6 +8,7 @@ const app = new Vue({
         },
         selectUser: 0,
         messaggioScritto:"",
+        contatto:"",
         now: dayjs().format('DD/MM/YYYY HH:mm:ss'),
         risposte:['ok','va bene','non preoccuparti','fa niente','se lallero'],
         contacts: [
