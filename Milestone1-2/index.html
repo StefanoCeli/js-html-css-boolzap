@@ -95,12 +95,9 @@
 
             <!--  SECTION -->
             <section>
-                <div  
-                v-for="(contact,index) in contacts"
-                v-if=" selectUser === index">
 
-                    <div
-                    v-for="message in contact.messages"
+                <div
+                    v-for="message in contacts[selectUser].messages"
                     :class="message.status"
                     >
                         <span class="text"
@@ -112,7 +109,6 @@
                         </span>
                     </div>
 
-                </div>
             </section>
             <!--  /SECTION -->
 
