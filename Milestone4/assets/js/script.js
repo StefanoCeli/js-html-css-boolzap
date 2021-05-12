@@ -136,9 +136,9 @@ const app = new Vue({
       getRandomNum(min,max){
         return Math.floor(Math.random() * (max - min) + min);
       },
-      filterVisible(nomeContatto){
+      filterVisible(){
         this.contacts.forEach(contact => {
-            if(contact.name.toLowerCase().includes(nomeContatto)){
+            if(contact.name.toLowerCase().includes(this.nomeContatto)){
                 contact.visible=true
             }else{
                 contact.visible=false
