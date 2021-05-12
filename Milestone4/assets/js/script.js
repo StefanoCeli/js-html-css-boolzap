@@ -8,7 +8,7 @@ const app = new Vue({
         },
         selectUser: 0,
         messaggioScritto:"",
-        contatto:"",
+        nomeContatto:"",
         now: dayjs().format('DD/MM/YYYY HH:mm:ss'),
         risposte:['ok','va bene','non preoccuparti','fa niente','se lallero'],
         contacts: [
@@ -135,6 +135,15 @@ const app = new Vue({
       //funzione numeri random
       getRandomNum(min,max){
         return Math.floor(Math.random() * (max - min) + min);
+      },
+      filterVisible(nomeContatto){
+        this.contacts.forEach(contact => {
+            if(contact.name.includes(nomeContatto)){
+                contact.visible=true
+            }else{
+                contact.visible=false
+            }
+        });
       }
     }
 
