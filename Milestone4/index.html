@@ -133,7 +133,7 @@
                 <input 
                 type="text" placeholder="Scrivi un messaggio"
                 v-model.trim="messaggioScritto"
-                @keyup.enter="pushMessage(messaggioScritto)"
+                @keyup.enter="sendMessage()"
                 >
                 <i class="fas fa-microphone"></i>
             </footer>

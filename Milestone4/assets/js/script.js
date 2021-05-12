@@ -105,32 +105,34 @@ const app = new Vue({
         },1000);     
     },
     methods:{
-
+        //funzione per prendere il percorso dell'immagine
       getImage(image){
          return './assets/img/avatar' + image + '.jpg';
       },
-
-      pushMessage(messaggio){
+      //funzione per inviare il messaggio e dopo 1 secondo avere la risposta
+      sendMessage(){
         if(this.messaggioScritto.length > 0){
-            this.contacts[this.selectUser].messages.push(
-                {
-                    date: this.now,
-                    text: messaggio,
-                    status: 'sent'
-                }
-            );
+            this.pushMessage(this.messaggioScritto,'sent');
+
             setTimeout(()=>{
-                this.contacts[this.selectUser].messages.push(
-                    {
-                        date: this.now,
-                        text: this.risposte[ this.getRandomNum(0,this.risposte.length)],
-                        status: 'received'
-                    }  
-                )
-            },1000)
+                //la risposta del bot sarà presa dall'array con indice del numero random
+                let risp = this.risposte[ this.getRandomNum(0,this.risposte.length)]
+                this.pushMessage(risp,'received')
+            },1000);
             this.messaggioScritto=""
         }
       },
+      //funzione che struttura il push del messaggio
+      pushMessage(text,status){
+        this.contacts[this.selectUser].messages.push(
+            {
+                date: this.now,
+                text: text,
+                status: status
+            }
+        );
+      },
+      //funzione numeri random
       getRandomNum(min,max){
         return Math.floor(Math.random() * (max - min) + min);
       }
