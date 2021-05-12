@@ -162,14 +162,13 @@ i{
 /* CLASSI SENT E RECEIVED */
 .sent{
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 .sent .text{
     background-color: #D5F9BA;
 }
 .received{
     display: flex;
-    justify-content: start;
 }
 .received .text{
     background-color: #fff;
