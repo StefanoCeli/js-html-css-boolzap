@@ -120,6 +120,18 @@ const app = new Vue({
       getImage(image){
          return './assets/img/avatar' + image + '.jpg';
       },
+      lastMessage(index){
+          if(this.contacts[index].messages.length < 1){
+              return " "
+          }
+          return this.contacts[index].messages[this.contacts[index].messages.length - 1].text
+    },
+      lastAccess(index){
+        if(this.contacts[index].messages.length < 1){
+            return " "
+        }
+        return this.contacts[index].messages[this.contacts[index].messages.length - 1].date
+    },
       //funzione per inviare il messaggio e dopo 1 secondo avere la risposta
       sendMessage(){
         if(this.messaggioScritto.length > 0){
@@ -174,5 +186,6 @@ const app = new Vue({
         this.contacts[this.selectUser].messages.splice(index,1)
       }
     }
+    
 
 })
