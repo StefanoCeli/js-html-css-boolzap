@@ -172,6 +172,29 @@ i{
     transform: translateY(-50%);
     display: none;
 }
+/* CLASSI PER ELIMINARE MESSAGGIO */
+.del-mess{
+    width: 130px;
+    font-size: 13px;
+    text-align: center;
+    background-color: #fff;
+    position: absolute;
+    top: 60%;
+    right: 20px;
+    box-shadow: 0 2px 4px  rgba(0, 0, 0, .5);
+    display: none;
+    z-index: 999;
+}
+.active{
+    display: block;
+}
+.container .right section .text .del-mess p{
+    margin: 10px 0;
+    cursor: pointer;
+}
+.container .right section .text .del-mess p:hover{
+    opacity: .6;
+}
 /* CLASSI SENT E RECEIVED */
 .sent{
     display: flex;
